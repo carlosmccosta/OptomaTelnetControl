@@ -2,18 +2,18 @@
 <StateProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProfilesList>
     <State>
-      <Zoom>0</Zoom>
-      <Focus>0</Focus>
-      <HorizontalLensShift>0</HorizontalLensShift>
-      <VerticalLensShift>0</VerticalLensShift>
+      <Zoom>38</Zoom>
+      <Focus>10</Focus>
+      <HorizontalLensShift>823</HorizontalLensShift>
+      <VerticalLensShift>1609</VerticalLensShift>
       <LensMemoryProfile>-1</LensMemoryProfile>
     </State>
     <State>
-      <Zoom>0</Zoom>
-      <Focus>0</Focus>
-      <HorizontalLensShift>0</HorizontalLensShift>
-      <VerticalLensShift>0</VerticalLensShift>
-      <LensMemoryProfile>-1</LensMemoryProfile>
+      <Zoom>38</Zoom>
+      <Focus>5</Focus>
+      <HorizontalLensShift>823</HorizontalLensShift>
+      <VerticalLensShift>1609</VerticalLensShift>
+      <LensMemoryProfile>1</LensMemoryProfile>
     </State>
   </ProfilesList>
   <ActiveProfileIndex>0</ActiveProfileIndex>

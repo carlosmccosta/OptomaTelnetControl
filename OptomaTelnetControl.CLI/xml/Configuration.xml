@@ -7,5 +7,5 @@
   <NumberOfRequestsForGoingFromLeftToRightLensShift>1550</NumberOfRequestsForGoingFromLeftToRightLensShift>
   <NumberOfRequestsForGoingFromBottomToTopLensShift>2910</NumberOfRequestsForGoingFromBottomToTopLensShift>
   <NumberOfRequestsForGoingFromFocusAtMinimumToMaximum>27</NumberOfRequestsForGoingFromFocusAtMinimumToMaximum>
-  <NumberOfRequestsForGoingFromZoomAtMinimumToMaximum>35</NumberOfRequestsForGoingFromZoomAtMinimumToMaximum>
+  <NumberOfRequestsForGoingFromZoomAtMinimumToMaximum>38</NumberOfRequestsForGoingFromZoomAtMinimumToMaximum>
 </Configuration>

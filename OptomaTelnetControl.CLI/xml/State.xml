@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <State xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Zoom>0</Zoom>
-  <Focus>0</Focus>
-  <HorizontalLensShift>0</HorizontalLensShift>
-  <VerticalLensShift>0</VerticalLensShift>
-  <LensMemoryProfile>-1</LensMemoryProfile>
+	<Zoom>38</Zoom>
+	<Focus>10</Focus>
+	<HorizontalLensShift>823</HorizontalLensShift>
+	<VerticalLensShift>1609</VerticalLensShift>
+	<LensMemoryProfile>-1</LensMemoryProfile>
 </State>

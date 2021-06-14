@@ -41,7 +41,7 @@ namespace OptomaTelnetControl
 
 
         [XmlElement("NumberOfRequestsForGoingFromZoomAtMinimumToMaximum")]
-        public int NumberOfRequestsForGoingFromZoomAtMinimumToMaximum { get; set; } = 35;
+        public int NumberOfRequestsForGoingFromZoomAtMinimumToMaximum { get; set; } = 38;
 
 
         public void SetValuesToValidRanges()
