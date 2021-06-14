@@ -52,10 +52,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="xml\Configuration.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="xml\Profiles.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="xml\State.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

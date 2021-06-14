@@ -6,158 +6,225 @@ namespace OptomaTelnetControl.CLI
     {
         static void Main(string[] args)
         {
-            OptomaTelnetControl optomaTelnetControl = new OptomaTelnetControl();
-            optomaTelnetControl.LoadXmls();
+            OptomaControl optomaControl = new OptomaControl();
 
-            if (optomaTelnetControl.Connect())
+            //optomaControl.Profiles.ProfilesList.Add(new State());
+            //optomaControl.Profiles.ProfilesList.Add(new State());
+            //optomaControl.SaveXmls();
+            //return;
+
+            optomaControl.LoadXmls();
+
+            int commandRepeatTimes = 1;
+
+            if (optomaControl.Connect())
             {
-                while (true)
+                bool stop = false;
+                while (!stop)
                 {
                     ConsoleKeyInfo input = Console.ReadKey();
                     switch (input.Key)
                     {
                         case ConsoleKey.W:
                         {
-                            optomaTelnetControl.IncreaseLensVerticalShift();
+                            optomaControl.MoveLensVerticalShiftUp(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.S:
                         {
-                            optomaTelnetControl.DecreaseLensVerticalShift();
+                            optomaControl.MoveLensVerticalShiftDown(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.A:
                         {
-                            optomaTelnetControl.DecreaseLensHorizontalShift();
+                            optomaControl.MoveLensHorizontalShiftLeft(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.D:
                         {
-                            optomaTelnetControl.IncreaseLensHorizontalShift();
+                            optomaControl.MoveLensHorizontalShiftRight(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.Z:
                         {
-                            optomaTelnetControl.IncreaseZoom();
+                            optomaControl.IncreaseZoomForHigherProjectionSize(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.X:
                         {
-                            optomaTelnetControl.DecreaseZoom();
+                            optomaControl.DecreaseZoomForLowerProjectionSize(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.F:
                         {
-                            optomaTelnetControl.IncreaseFocus();
+                            optomaControl.IncreaseFocusToHigherProjectionDistance(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.G:
                         {
-                            optomaTelnetControl.DecreaseFocus();
+                            optomaControl.DecreaseFocusToLowerProjectionDistance(commandRepeatTimes);
                             break;
                         }
 
                         case ConsoleKey.NumPad1:
                         {
-                            optomaTelnetControl.SaveLensShiftPosition(1);
+                            optomaControl.SaveLensShiftPosition(1);
                             break;
                         }
 
                         case ConsoleKey.NumPad2:
                         {
-                            optomaTelnetControl.SaveLensShiftPosition(2);
+                            optomaControl.SaveLensShiftPosition(2);
                             break;
                         }
 
                         case ConsoleKey.NumPad3:
                         {
-                            optomaTelnetControl.SaveLensShiftPosition(3);
+                            optomaControl.SaveLensShiftPosition(3);
                             break;
                         }
 
                         case ConsoleKey.NumPad4:
                         {
-                            optomaTelnetControl.SaveLensShiftPosition(4);
+                            optomaControl.SaveLensShiftPosition(4);
                             break;
                         }
 
                         case ConsoleKey.NumPad5:
                         {
-                            optomaTelnetControl.SaveLensShiftPosition(5);
+                            optomaControl.SaveLensShiftPosition(5);
                             break;
                         }
 
                         case ConsoleKey.NumPad6:
                         {
-                            optomaTelnetControl.LoadLensShiftPosition(1);
+                            optomaControl.ApplyLensShiftPosition(1);
                             break;
                         }
 
                         case ConsoleKey.NumPad7:
                         {
-                            optomaTelnetControl.LoadLensShiftPosition(2);
+                            optomaControl.ApplyLensShiftPosition(2);
                             break;
                         }
 
                         case ConsoleKey.NumPad8:
                         {
-                            optomaTelnetControl.LoadLensShiftPosition(3);
+                            optomaControl.ApplyLensShiftPosition(3);
                             break;
                         }
 
                         case ConsoleKey.NumPad9:
                         {
-                            optomaTelnetControl.LoadLensShiftPosition(4);
+                            optomaControl.ApplyLensShiftPosition(4);
                             break;
                         }
 
                         case ConsoleKey.NumPad0:
                         {
-                            optomaTelnetControl.LoadLensShiftPosition(5);
+                            optomaControl.ApplyLensShiftPosition(5);
+                            break;
+                        }
+
+                        case ConsoleKey.T:
+                        {
+                            optomaControl.ActivateStoredProfile();
                             break;
                         }
 
                         case ConsoleKey.N:
                         {
-                            optomaTelnetControl.PowerOn();
+                            optomaControl.PowerOn();
                             break;
                         }
 
                         case ConsoleKey.M:
                         {
-                            optomaTelnetControl.PowerOff();
+                            optomaControl.PowerOff();
                             break;
                         }
 
                         case ConsoleKey.L:
                         {
-                            optomaTelnetControl.LockLens(true);
+                            optomaControl.LockLens(true);
                             break;
                         }
 
                         case ConsoleKey.K:
                         {
-                            optomaTelnetControl.LockLens(false);
+                            optomaControl.LockLens(false);
                             break;
                         }
 
                         case ConsoleKey.H:
                         {
-                            optomaTelnetControl.CenterLensShift();
+                            optomaControl.RecalibrateLensShiftToCenter();
+                            break;
+                        }
+
+                        case ConsoleKey.Y:
+                        {
+                            optomaControl.ResetHorizontalLensShiftToLeft();
+                            break;
+                        }
+
+                        case ConsoleKey.U:
+                        {
+                            optomaControl.ResetVerticalLensShiftToBottom();
+                            break;
+                        }
+
+                        case ConsoleKey.I:
+                        {
+                            optomaControl.ResetFocusToClosestProjectionDistance();
+                            break;
+                        }
+
+                        case ConsoleKey.O:
+                        {
+                            optomaControl.ResetZoomToSmallestProjectionSize();
+                            break;
+                        }
+
+                        case ConsoleKey.Backspace:
+                        {
+                            if (commandRepeatTimes > 1)
+                            {
+                                commandRepeatTimes -= 1;
+                            }
+                            break;
+                        }
+
+                        case ConsoleKey.Enter:
+                        {
+                            commandRepeatTimes += 1;
+                            break;
+                        }
+
+                        case ConsoleKey.Delete:
+                        {
+                            commandRepeatTimes = 1;
+                            break;
+                        }
+
+                        case ConsoleKey.Escape:
+                        {
+                            stop = true;
                             break;
                         }
                     }
                 }
             }
 
-            optomaTelnetControl.SaveXmls();
+            optomaControl.SaveXmls();
+            optomaControl.Dispose();
         }
     }
 }
