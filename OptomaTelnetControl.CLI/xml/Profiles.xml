@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<StateProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProfilesList>
+    <State>
+      <CurrentZoom>0</CurrentZoom>
+      <CurrentFocus>0</CurrentFocus>
+      <CurrentHorizontalLensShift>0</CurrentHorizontalLensShift>
+      <CurrentVerticalLensShift>0</CurrentVerticalLensShift>
+    </State>
+    <State>
+      <CurrentZoom>0</CurrentZoom>
+      <CurrentFocus>0</CurrentFocus>
+      <CurrentHorizontalLensShift>0</CurrentHorizontalLensShift>
+      <CurrentVerticalLensShift>0</CurrentVerticalLensShift>
+    </State>
+  </ProfilesList>
+  <ActiveProfileIndex>0</ActiveProfileIndex>
+</StateProfiles>

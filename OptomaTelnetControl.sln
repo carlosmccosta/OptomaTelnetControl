@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptomaTelnetControl", "OptomaTelnetControl\OptomaTelnetControl.csproj", "{8355867A-F322-4ADC-A8C2-5F242FCBD39D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptomaTelnetControl.CLI", "OptomaTelnetControl.CLI\OptomaTelnetControl.CLI.csproj", "{F33587B8-C5E1-4CAA-B680-86228218E40C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8355867A-F322-4ADC-A8C2-5F242FCBD39D} = {8355867A-F322-4ADC-A8C2-5F242FCBD39D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8355867A-F322-4ADC-A8C2-5F242FCBD39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8355867A-F322-4ADC-A8C2-5F242FCBD39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8355867A-F322-4ADC-A8C2-5F242FCBD39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8355867A-F322-4ADC-A8C2-5F242FCBD39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F33587B8-C5E1-4CAA-B680-86228218E40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33587B8-C5E1-4CAA-B680-86228218E40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33587B8-C5E1-4CAA-B680-86228218E40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33587B8-C5E1-4CAA-B680-86228218E40C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5255CCD-E90A-46B9-BE56-3973E099CF1D}
+	EndGlobalSection
+EndGlobal

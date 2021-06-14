@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<OptomaTelnetControlState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CurrentZoom>0</CurrentZoom>
+  <CurrentFocus>0</CurrentFocus>
+  <CurrentHorizontalLensShift>0</CurrentHorizontalLensShift>
+  <CurrentVerticalLensShift>0</CurrentVerticalLensShift>
+</OptomaTelnetControlState>

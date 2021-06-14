@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<OptomaTelnetControlConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Hostname>192.168.0.100</Hostname>
+  <Port>23</Port>
+  <ProjectorId>0</ProjectorId>
+  <NumberOfRequestsForHorizontalLensShiftReset>100</NumberOfRequestsForHorizontalLensShiftReset>
+  <NumberOfRequestsForVerticalLensShiftReset>200</NumberOfRequestsForVerticalLensShiftReset>
+  <NumberOfRequestsForFocusReset>30</NumberOfRequestsForFocusReset>
+  <NumberOfRequestsForZoomReset>30</NumberOfRequestsForZoomReset>
+</OptomaTelnetControlConfiguration>
