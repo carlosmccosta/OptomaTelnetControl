@@ -15,6 +15,7 @@ namespace OptomaTelnetControl
         public Configuration Configuration { get; set; } = new Configuration();
         public State State { get; set; } = new State();
         public StateProfiles Profiles { get; set; } = new StateProfiles();
+        public string XmlsConfigurationsFolder { get; set; } = "xml/";
 
 
         public OptomaControl() { }
@@ -50,61 +51,61 @@ namespace OptomaTelnetControl
         }
 
 
-        public void LoadXmls(string folder = "xml/")
+        public void LoadXmls()
         {
-            LoadConfiguration(folder);
-            LoadState(folder);
-            LoadProfiles(folder);
+            LoadConfiguration();
+            LoadState();
+            LoadProfiles();
         }
 
 
-        public void SaveXmls(string folder = "xml/")
+        public void SaveXmls()
         {
-            SaveConfiguration(folder);
-            SaveState(folder);
-            SaveProfiles(folder);
+            SaveConfiguration();
+            SaveState();
+            SaveProfiles();
         }
 
 
-        public void LoadConfiguration(string folder = "xml/", string filename = "Configuration.xml")
+        public void LoadConfiguration(string filename = "Configuration.xml")
         {
-            Configuration = Tools.LoadFromXml<Configuration>(folder + filename);
+            Configuration = Tools.LoadFromXml<Configuration>(XmlsConfigurationsFolder + filename);
             Configuration.SetValuesToValidRanges();
         }
 
 
-        public void SaveConfiguration(string folder = "xml/", string filename = "Configuration.xml")
+        public void SaveConfiguration(string filename = "Configuration.xml")
         {
             Configuration.SetValuesToValidRanges();
-            Tools.SaveToXml(folder + filename, Configuration);
+            Tools.SaveToXml(XmlsConfigurationsFolder + filename, Configuration);
         }
 
 
-        public void LoadState(string folder = "xml/", string filename = "State.xml")
+        public void LoadState(string filename = "State.xml")
         {
-            State = Tools.LoadFromXml<State>(folder + filename);
+            State = Tools.LoadFromXml<State>(XmlsConfigurationsFolder + filename);
             State.SetValuesToValidRanges(Configuration);
         }
 
 
-        public void SaveState(string folder = "xml/", string filename = "State.xml")
+        public void SaveState(string filename = "State.xml")
         {
             State.SetValuesToValidRanges(Configuration);
-            Tools.SaveToXml(folder + filename, State);
+            Tools.SaveToXml(XmlsConfigurationsFolder + filename, State);
         }
 
 
-        public void LoadProfiles(string folder = "xml/", string filename = "Profiles.xml")
+        public void LoadProfiles(string filename = "Profiles.xml")
         {
-            Profiles = Tools.LoadFromXml<StateProfiles>(folder + filename);
+            Profiles = Tools.LoadFromXml<StateProfiles>(XmlsConfigurationsFolder + filename);
             Profiles.SetValuesToValidRanges(Configuration);
         }
 
 
-        public void SaveProfiles(string folder = "xml/", string filename = "Profiles.xml")
+        public void SaveProfiles(string filename = "Profiles.xml")
         {
             Profiles.SetValuesToValidRanges(Configuration);
-            Tools.SaveToXml(folder + filename, Profiles);
+            Tools.SaveToXml(XmlsConfigurationsFolder + filename, Profiles);
         }
 
 
@@ -124,7 +125,7 @@ namespace OptomaTelnetControl
             }
 
             TcpClient.Connect(Configuration.Hostname, Configuration.Port);
-            
+
             if (TcpClient.Connected)
             {
                 PowerOn();
@@ -472,6 +473,7 @@ namespace OptomaTelnetControl
                 {
                     Profiles.ActiveProfileIndex = profileNumber;
                     SaveProfiles();
+                    return true;
                 }
             }
             return false;
