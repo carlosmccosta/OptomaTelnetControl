@@ -4,8 +4,57 @@ namespace OptomaTelnetControl.CLI
 {
     class Program
     {
+        static void ShowUsage()
+        {
+            Console.Out.WriteLine("===============================================================================");
+            Console.Out.WriteLine("==                Optoma Telnet Control keyboard controls                    ==");
+            Console.Out.WriteLine("===============================================================================\n");
+
+            Console.Out.WriteLine("ESC -> Exit\n");
+
+            Console.Out.WriteLine("N -> PowerOn");
+            Console.Out.WriteLine("M -> PowerOff\n");
+
+            Console.Out.WriteLine("L -> LockLens");
+            Console.Out.WriteLine("K -> UnLockLens\n");
+
+            Console.Out.WriteLine("Backspace -> commandRepeatTimes -= 1");
+            Console.Out.WriteLine("Enter -> commandRepeatTimes += 1");
+            Console.Out.WriteLine("Delete -> commandRepeatTimes = 1\n");
+
+            Console.Out.WriteLine("I -> ResetFocusToClosestProjectionDistance");
+            Console.Out.WriteLine("F -> IncreaseFocusToHigherProjectionDistance(commandRepeatTimes)");
+            Console.Out.WriteLine("G -> DecreaseFocusToLowerProjectionDistance(commandRepeatTimes)\n");
+
+            Console.Out.WriteLine("O -> ResetZoomToSmallestProjectionSize");
+            Console.Out.WriteLine("Z -> IncreaseZoomForHigherProjectionSize(commandRepeatTimes)");
+            Console.Out.WriteLine("X -> DecreaseZoomForLowerProjectionSize(commandRepeatTimes)\n");
+
+            Console.Out.WriteLine("W -> MoveLensVerticalShiftUp");
+            Console.Out.WriteLine("S -> MoveLensVerticalShiftDown");
+            Console.Out.WriteLine("A -> MoveLensHorizontalShiftLeft");
+            Console.Out.WriteLine("D -> MoveLensHorizontalShiftRight\n");
+
+            Console.Out.WriteLine("H -> RecalibrateLensShiftToCenter");
+            Console.Out.WriteLine("Y -> ResetHorizontalLensShiftToLeft");
+            Console.Out.WriteLine("U -> ResetVerticalLensShiftToBottom\n");
+
+            Console.Out.WriteLine("T -> ActivateStoredProfile");
+            Console.Out.WriteLine("NumPad1 -> SaveLensShiftPosition");
+            Console.Out.WriteLine("NumPad2 -> SaveLensShiftPosition");
+            Console.Out.WriteLine("NumPad3 -> SaveLensShiftPosition");
+            Console.Out.WriteLine("NumPad4 -> SaveLensShiftPosition");
+            Console.Out.WriteLine("NumPad5 -> SaveLensShiftPosition");
+            Console.Out.WriteLine("NumPad6 -> ApplyLensShiftPosition");
+            Console.Out.WriteLine("NumPad7 -> ApplyLensShiftPosition");
+            Console.Out.WriteLine("NumPad8 -> ApplyLensShiftPosition");
+            Console.Out.WriteLine("NumPad9 -> ApplyLensShiftPosition");
+            Console.Out.WriteLine("NumPad0 -> ApplyLensShiftPosition\n");
+        }
+
         static void Main(string[] args)
         {
+            ShowUsage();
             OptomaControl optomaControl = new OptomaControl();
 
             //optomaControl.Profiles.ProfilesList.Add(new State());
